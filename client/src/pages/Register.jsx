@@ -9,13 +9,15 @@ const Register = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/test", {
+      const response = await axios.post("/register", {
         name,
         email,
         password,
       });
-      console.log(response);
+      // navigate programmatically to the index page
+      window.location.href = "/";
     } catch (error) {
+      alert("User registration failed");
       console.log(error);
     }
   };
